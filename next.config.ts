@@ -1,19 +1,7 @@
-import type { NextConfig } from "next";
+// import type { NextConfig } from "next";
 
-const nextConfig: NextConfig = {
-  async headers() {
-    return [
-      {
-        source: "/(.*)",
-        headers: [
-          {
-            key: "Content-Security-Policy",
-            value: "script-src 'self'; object-src 'none';", // Example, adjust as needed
-          },
-        ],
-      },
-    ];
-  },
-};
+// const nextConfig: NextConfig = {
+//   /* config options here */
+// };
 
-export default nextConfig;
+// export default nextConfig;
