@@ -8,6 +8,13 @@ export default async function ProductPage() {
       <h1 className="text-center font-bold bg-amber-300 rounded-lg text-3xl p-4">
         Product Page
       </h1>
+      <div>
+        <button className="mb-4 mt-4">
+          <a href="/product/new" className="bg-amber-500 text-white px-4 py-2 rounded">
+            Create New Product
+          </a>
+        </button>
+      </div>
       <div className="overflow-x-auto">
         <table className="w-full border-collapse mt-4">
           <thead>
@@ -18,9 +25,9 @@ export default async function ProductPage() {
               <th className="border border-gray-200 px-3 py-2">Packaging</th>
               <th className="border border-gray-200 px-3 py-2">Price</th>
               <th className="border border-gray-200 px-3 py-2">Stock</th>
-              <th className="border border-gray-200 px-3 py-2">Category</th>
-              <th className="border border-gray-200 px-3 py-2">Category ID</th>
-              <th className="border border-gray-200 px-3 py-2">Deleted</th>
+              <th className="border border-gray-200 px-3 py-2">
+                Category Name
+              </th>
             </tr>
           </thead>
           <tbody>
@@ -46,21 +53,13 @@ export default async function ProductPage() {
                     {product.stock !== undefined ? product.stock : "-"}
                   </td>
                   <td className="border border-gray-200 px-3 py-2">
-                    {product.category || product.categoryName || "-"}
-                  </td>
-                  <td className="border border-gray-200 px-3 py-2">
-                    {product.categoryId !== undefined
-                      ? product.categoryId
-                      : "-"}
-                  </td>
-                  <td className="border border-gray-200 px-3 py-2">
-                    {product.deleted ? "Yes" : "No"}
+                    {product.category?.name || "-"}
                   </td>
                 </tr>
               ))
             ) : (
               <tr>
-                <td colSpan={9} className="text-center py-4">
+                <td colSpan={13} className="text-center py-4">
                   No products found.
                 </td>
               </tr>

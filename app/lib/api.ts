@@ -1,8 +1,9 @@
 // app/lib/api.ts
+const API_BASE_URL = "https://cicdassignment.up.railway.app";
 
 export async function fetchProducts() {
   const res = await fetch(
-    "https://cicdassignment-production.up.railway.app/products",
+    `${API_BASE_URL}/products`,
   );
   if (!res.ok) throw new Error("Failed to fetch products");
   return res.json();
@@ -10,7 +11,7 @@ export async function fetchProducts() {
 
 export async function fetchUsers() {
   const res = await fetch(
-    "https://cicdassignment-production.up.railway.app/users",
+    `${API_BASE_URL}/users`,
   );
   if (!res.ok) throw new Error("Failed to fetch users");
   return res.json();
@@ -18,7 +19,7 @@ export async function fetchUsers() {
 
 export async function fetchCategories() {
   const res = await fetch(
-    "https://cicdassignment-production.up.railway.app/categories",
+    `${API_BASE_URL}/categories`,
   );
   if (!res.ok) throw new Error("Failed to fetch categories");
   return res.json();

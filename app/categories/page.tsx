@@ -4,7 +4,9 @@ export default async function CategoriesPage() {
   const categories = await fetchCategories();
   return (
     <div>
-      <h1>Categories Page</h1>
+      <h1 className="text-center font-bold bg-amber-300 rounded-lg text-3xl p-4">
+        Categories
+      </h1>
       <div className="overflow-x-auto">
         <table className="w-full border-collapse mt-4">
           <thead>
