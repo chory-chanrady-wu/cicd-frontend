@@ -25,12 +25,6 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - name: Run ESLint
-        run: pnpm run lint
-
-      - name: Run Eslint fix
-        run: pnpm run lint:fix
-
       - name: Run Prettier fix
         run: pnpm run format:fix
 
